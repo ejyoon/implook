@@ -187,7 +187,7 @@ var experiment = { // end, next, select
 
   	var message_html = '<table cellspacing="2" align="center"><tr> <td id="messagesum"></td></tr></table>'
 		 $("#message").html(message_html) 
-
+   // *** FOR SOME REASON THE MESSAGE FUNCTION DOES NOT WORK...***
    },
     
    // SELECT function
