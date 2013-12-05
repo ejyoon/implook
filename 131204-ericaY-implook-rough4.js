@@ -1,7 +1,7 @@
 // Overview: (i) Helper (ii) Parameters (iii) Control Flow
 
 // ***WHAT'S BEEN DONE SO FAR***
-// DISPLAY: simple implicature with Elmo
+// DISPLAY: ignorance implicature for Elmo
 
 // ---------------- HELPER ------------------
 
@@ -59,8 +59,16 @@ if(targ == 0) {
 // ***var answer = 'intial' (?) ***
 
 // ---------------- CONTROL FLOW ------------------
-// **** ADD PRELOAD IMAGES FUNCTION **** //
+//PRE-LOAD IMAGES
+// By creating image object and setting source, images preload
+var images = new Array() 
+for (i=0;i<2;i++) {//loop through images you want to use
+    images[i] = new Image()
+    images[i].src =  "objects/" + container[i] + numItem[i] + ".png"
+    images[i] = new Image()
+    images[i].src =  "objects/" + container[i] + numItem[i] + "_closed.png"
 
+} 
 showSlide("instructions");
 
 // MAIN EXPERIMENT
@@ -71,13 +79,13 @@ var experiment = { // end, next, select
     showSlide('initial1')
       // Create the image table (tr=table row; td= table data)
     	var image1_html = '<table align="center" cellspacing="40"><tr>'
-  		image1_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=40% /></td>'
-    	image1_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=40% /></td>'
-      image1_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=40% /></td></tr>'
+  		image1_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td>'
+    	image1_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td>'
+      image1_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td></tr>'
       for (i=0;i<3;i++){
 			  name = "objects/" + container[i] + numItem[i] + ".png"
 			  image1_html += '<td align="center"><img  src="' + name +  '"alt="' + name +
-				'" id="objImage" height=30% /></td>'
+				'" id="objImage" height=2% /></td>'
 			}
 			image1_html += '</tr></table>'
 			$("#image1").html(image1_html); //insert dynamically-built html code into html file; 
@@ -89,27 +97,27 @@ var experiment = { // end, next, select
     showSlide('initial2')
       // Create the image table (tr=table row; td= table data)
       var image2_html = '<table align="center" cellspacing="40"><tr>'
-  		image2_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=40% /></td>'
-    	image2_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=40% /></td>'
-      image2_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=40% /></td></tr>'
+  		image2_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td>'
+    	image2_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td>'
+      image2_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td></tr>'
       for (i=0;i<3;i++) {
         if(targ == 0) {
           if(numItem[i] == 1) {
             name = "objects/" + container[i] + numItem[i] + "_closed.png"
-  		      image2_html += '<td align="center"><img  src="' + name +  '"alt="' + name + '" id="objImage" height=30% /></td>'
+  		      image2_html += '<td align="center"><img  src="' + name +  '"alt="' + name + '" id="objImage" height=2% /></td>'
           } else {
             name = "objects/" + container[i] + numItem[i] + ".png"
     	  image2_html += '<td align="center"><img  src="' + name +  '"alt="' + name +
-				'" id="objImage" height=30% /></td>' 
+				'" id="objImage" height=2% /></td>' 
           }
     	    } else if (targ == 1) {
             if(numItem[i] == 2) {
             name = "objects/" + container[i] + numItem[i] + "_closed.png"
-    	      image2_html += '<td align="center"><img  src="' + name +  '"alt="' + name + '" id="objImage" height=30% /></td>'
+    	      image2_html += '<td align="center"><img  src="' + name +  '"alt="' + name + '" id="objImage" height=2% /></td>'
           } else {
             name = "objects/" + container[i] + numItem[i] + ".png"
     	  image2_html += '<td align="center"><img  src="' + name +  '"alt="' + name +
-				'" id="objImage" height=30% /></td>' 
+				'" id="objImage" height=2% /></td>' 
           }
     	    }}
 			image2_html += '</tr></table>'
@@ -122,27 +130,27 @@ var experiment = { // end, next, select
     showSlide('initial3')
       // Create the image table (tr=table row; td= table data)
       var image3_html = '<table align="center" cellspacing="40"><tr>'
-    	image3_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=40% /></td>'
-    	image3_html += '<td align = "center"><img src="objects/elmo.png" id="elmo" height=40% /></td>'
-      image3_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=40% /></td></tr>'
+    	image3_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td>'
+    	image3_html += '<td align = "center"><img src="objects/elmo.png" id="elmo" height=35% /></td>'
+      image3_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td></tr>'
       for (i=0;i<3;i++) {
         if(targ == 0) {
           if(numItem[i] == 1) {
             name = "objects/" + container[i] + numItem[i] + "_closed.png"
-  		      image3_html += '<td align="center"><img  src="' + name +  '"alt="' + name + '" id="objImage" height=30% /></td>'
+  		      image3_html += '<td align="center"><img  src="' + name +  '"alt="' + name + '" id="objImage" height=2% /></td>'
           } else {
             name = "objects/" + container[i] + numItem[i] + ".png"
     	  image3_html += '<td align="center"><img  src="' + name +  '"alt="' + name +
-				'" id="objImage" height=30% /></td>' 
+				'" id="objImage" height=2% /></td>' 
           }
     	    } else if (targ == 1) {
             if(numItem[i] == 2) {
             name = "objects/" + container[i] + numItem[i] + "_closed.png"
-    	      image3_html += '<td align="center"><img  src="' + name +  '"alt="' + name + '" id="objImage" height=30% /></td>'
+    	      image3_html += '<td align="center"><img  src="' + name +  '"alt="' + name + '" id="objImage" height=2% /></td>'
           } else {
             name = "objects/" + container[i] + numItem[i] + ".png"
     	  image3_html += '<td align="center"><img  src="' + name +  '"alt="' + name +
-				'" id="objImage" height=30% /></td>' 
+				'" id="objImage" height=2% /></td>' 
           }
     	    }}
 			image3_html += '</tr></table>'
@@ -162,13 +170,13 @@ var experiment = { // end, next, select
        
       // Create the image table (tr=table row; td= table data)
   		var image_html = '<table align="center" cellspacing="40"><tr>'
-  		image_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=40% /></td>'
-    	image_html += '<td align = "center"><img src="objects/elmo.png" id="elmo" height=40% /></td>'
-      image_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=40% /></td></tr>'
+  		image_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td>'
+    	image_html += '<td align = "center"><img src="objects/elmo.png" id="elmo" height=35% /></td>'
+      image_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td></tr>'
       for (i=0;i<3;i++){
 			  name = "objects/" + container[i] + numItem[i] + "_closed.png"
 			  image_html += '<td align="center"><img  src="' + name +  '"alt="' + name +
-				'" id="objImage" height=30% /></td>'
+				'" id="objImage" height=2% /></td>'
 			}
 			image_html += '</tr><tr>'
 			image_html += '<td align="center"><input type="radio" name="thing" id="item_0"></input></td>'
@@ -184,7 +192,7 @@ var experiment = { // end, next, select
     
    // SELECT function
    select: function() {
-// *** Add gfunction etting whether the answers are privileged, shared, or incorrect ***
+// *** Add function getting whether the answers are privileged, shared, or incorrect ***
       var left
       var center
       var right
@@ -197,16 +205,62 @@ var experiment = { // end, next, select
 		    right = 1		    
 		}
     
-    if(left == 1) {
-    experiment.crit = "left"
-    } else if(center == 1) {
-      experiment.crit = "center"
-    } else if(right == 1) {
-      experiment.crit = "right"
-    }
+      	if(left == 1) {
+			    if(numItem[0] == 1) {
+				    if(targ == 0) {
+					    answer = 'privileged'
+				    } else if (targ == 1) {
+					    answer = 'incorrect'}
+			    } else if(numItem[0] == 2) {
+				    if(targ == 0) {
+					    answer = 'incorrect'
+				    } else if (targ == 1) {
+					    answer = 'privileged'}
+			    } else if(numItem[0] == 3) {
+				    if(targ == 0) {
+					    answer = 'shared'
+				  } else if (targ == 1) {
+					    answer = 'shared'}
+				}	
+      	} else if (center == 1) {
+  		    if(numItem[1] == 1) {
+				    if(targ == 0) {
+					    answer = 'privileged'
+				    } else if (targ == 1) {
+					    answer = 'incorrect'}
+			    } else if(numItem[1] == 2) {
+				    if(targ == 0) {
+					    answer = 'incorrect'
+				    } else if (targ == 1) {
+					    answer = 'privileged'}
+			    } else if(numItem[1] == 3) {
+				    if(targ == 0) {
+					    answer = 'shared'
+				  } else if (targ == 1) {
+					    answer = 'shared'}
+				}	
+      	} else if (right == 1) {
+  		    if(numItem[2] == 1) {
+				    if(targ == 0) {
+					    answer = 'privileged'
+				    } else if (targ == 1) {
+					    answer = 'incorrect'}
+			    } else if(numItem[2] == 2) {
+				    if(targ == 0) {
+					    answer = 'incorrect'
+				    } else if (targ == 1) {
+					    answer = 'privileged'}
+			    } else if(numItem[2] == 3) {
+				    if(targ == 0) {
+					    answer = 'shared'
+				  } else if (targ == 1) {
+					    answer = 'shared'}
+				}	
+      	}
    
-    if (document.getElementById('item_0').checked || document.getElementById('item_1').checked || document.getElementById('item_2').checked) {
-    
+    experiment.crit = answer
+   
+    if (document.getElementById('item_0').checked || document.getElementById('item_1').checked || document.getElementById('item_2').checked) {    
     showSlide("finished");
     var vars_html = '<p> answer =' + experiment.crit + ' </p>'
     $("#vars").html(vars_html);
