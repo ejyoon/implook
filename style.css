@@ -108,3 +108,8 @@ This stuff will vary by experiment.
   height: 160px;
 }
 
+.additional{
+  font-size: 0.8em;
+  text-align: center;
+  margin-top: 0em;
+}

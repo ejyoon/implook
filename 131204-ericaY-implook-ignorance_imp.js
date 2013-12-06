@@ -75,12 +75,38 @@ showSlide("instructions");
 // MAIN EXPERIMENT
 var experiment = { // end, next, select
     crit: [],
-  // INITIAL1 function
+    
+    // INITIAL0 function
+  initial0:function() {
+    showSlide('initial0')
+    
+     // Sentential description 1 to scaffold
+      var description0_html = '<p align="center">Look at these ' + container_plural + '! I wonder what these ' + container_plural + ' have inside.</p>' 
+      $("#description0").html(description0_html);
+      
+      // Create the image table (tr=table row; td= table data)
+    	var image0_html = '<table align="center" cellspacing="40"><tr>'
+  		image0_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td>'
+    	image0_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td>'
+      image0_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td></tr>'
+      for (i=0;i<3;i++){
+			  name = "objects/" + container[i] + numItem[i] + "_closed.png"
+			  image0_html += '<td align="center"><img  src="' + name +  '"alt="' + name +
+				'" id="objImage" height=2% /></td>'
+			}
+			image0_html += '</tr></table>'
+			$("#image0").html(image0_html); //insert dynamically-built html code into html file; 
+
+    },
+
+// INITIAL1 function
   initial1:function() {
     showSlide('initial1')
     
      // Sentential description 1 to scaffold
-      var description1_html = '<p align="center">Look at these ' + container_plural '! I wonder what these ' + container_plural + ' have inside.</p>' 
+      var description1_html = '<p align="center">Wow, look!</p>'
+      description1_html += '<p align="center">Now, one of these ' + container_plural  + ' might close. ' 
+      description1_html += 'Let\'s see if you can remember all the things inside each ' + container_word + '! </p>'
       $("#description1").html(description1_html);
             
       // Create the image table (tr=table row; td= table data)
