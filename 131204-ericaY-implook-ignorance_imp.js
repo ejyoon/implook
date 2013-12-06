@@ -44,9 +44,10 @@ var shuffled_numItem_list = shuffle(numItem_list)
 var numItem = shuffled_numItem_list
 
 // --WORDS--
-var allwords = [[["lunchbox"], ["an orange", "an apple"]]] // later we can add more words to this
+var allwords = [[["lunchbox", "lunchboxes"], ["an orange", "an apple"]]] // later we can add more words to this
 var shuffled_allwords = shuffle(allwords)
 var container_word = shuffled_allwords[0][0][0]
+var container_plural = shuffled_allwords[0][0][1]
 var item_word_list = allwords[0][1]
 var item_word = []
 
@@ -77,6 +78,11 @@ var experiment = { // end, next, select
   // INITIAL1 function
   initial1:function() {
     showSlide('initial1')
+    
+     // Sentential description 1 to scaffold
+      var description1_html = '<p align="center">Look at these ' + container_plural '! I wonder what these ' + container_plural + ' have inside.</p>' 
+      $("#description1").html(description1_html);
+            
       // Create the image table (tr=table row; td= table data)
     	var image1_html = '<table align="center" cellspacing="40"><tr>'
   		image1_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td>'

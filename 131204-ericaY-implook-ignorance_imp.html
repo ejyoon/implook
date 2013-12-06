@@ -12,7 +12,7 @@
     <div class="slide" id="instructions"> <!--Make sure class and id are specified, these are kinds of names that Javascript identifies each section; 'div function section-izes each part that you want to be considered separately-->
       <img src="images/stanford.png" alt="Stanford University"> <!--load image for Stanford, if the image does not show up just write 'Stanford'-->
       <p id='logo-text'>Stanford Language and Cognition Lab</p> <!--note we specify id here as well, which we can refer to in js file-->
-      <p class="block-text">In this experiment, you will see a series of pictures that shows you a plot of events that Elmo goes through. Following the pictures, you will be asked to choose the item that Elmo wanted. 
+      <p class="block-text">In this experiment, you will see a series of pictures that shows events that happened. Your goal is to remember what happened and answer the questions about these pictures and events. 
 		  </p>
       
       <button type="button" onClick="this.blur(); experiment.initial1()">Start</button> <!-- This puts a button with text 'Start', which upon participant's click carries out the functions this.blur() and experiment.initial1(), which is specified in js scripts in var experiment and next: function-->
@@ -21,6 +21,7 @@
     </div> <!--notes the ends of the divided part "instructions"-->
 
     <div class="slide" id="initial1">
+      <div id="description1"> </div> <!--dynamically built in javascript-->
       <div id="image1"></div> <!--dynamically built in javascript-->
       <p align="center"> Click 'Next' to see what happens next. </p>
       <table align="center"><tr><td> <button type="button" onClick="this.blur(); experiment.initial2()">Next</button> </td> </tr>
@@ -58,6 +59,6 @@
       <div id="vars"> </div> <!--dynamically built in javascript-->
     </div>
 
-<script src="131204-ericaY-implook-rough4.js"></script>    
+<script src="131204-ericaY-implook-ignorance_imp.js"></script>    
 </body>
 </html>
