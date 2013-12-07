@@ -185,13 +185,13 @@ var experiment = { // end, next, select
   // INITIAL3 function
   initial3:function() {
    if(document.getElementById('item_remember0').checked) {
-     if(targ == 1) {
+     if(targ == 0) {
        if(numItem[0] == 1) {
          showSlide("initial3")
        } else {
          $("#message_remember_sum").html('<font color="red">Your answer is incorrect! Try again.</font>');
        }
-     } else if(targ == 2) {
+     } else if(targ == 1) {
         if(numItem[0] == 2) {
           showSlide("initial3")
         } else {
@@ -199,13 +199,13 @@ var experiment = { // end, next, select
         }
      }
      } else if(document.getElementById('item_remember1').checked) {
-     if(targ == 1) {
+     if(targ == 0) {
        if(numItem[1] == 1) {
          showSlide("initial3")
        } else {
          $("#message_remember_sum").html('<font color="red">Your answer is incorrect! Try again.</font>');
        }
-     } else if(targ == 2) {
+     } else if(targ == 1) {
         if(numItem[1] == 2) {
           showSlide("initial3")
         } else {
@@ -213,13 +213,13 @@ var experiment = { // end, next, select
         }       
      }
    } else if(document.getElementById('item_remember2').checked) {
-     if(targ == 1) {
+     if(targ == 0) {
        if(numItem[2] == 1) {
          showSlide("initial3")
        } else {
          $("#message_remember_sum").html('<font color="red">Your answer is incorrect! Try again.</font>');
        }
-     } else if(targ == 2) {
+     } else if(targ == 1) {
         if(numItem[2] == 2) {
           showSlide("initial3")
         } else {
