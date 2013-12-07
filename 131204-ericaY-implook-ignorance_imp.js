@@ -164,9 +164,9 @@ var experiment = { // end, next, select
       // test to see if they remember
       var remember1_html = '<p align="center">What was in the closed ' + container_word  + '?</p>'
       remember1_html += '<table align="center" cellspacing="40"><tr>'    
-      remember1_html += '<td align="center"><input type="radio" name="remember" id="item_0"> only ' + item_word_list[0] + ' </input></td>'
-  		remember1_html += '<td align="center"><input type="radio" name="remember" id="item_1"> only ' + item_word_list[1] + '</input></td>'
-      remember1_html += '<td align="center"><input type="radio" name="remember" id="item_2">' + item_word_list[0] + ' and ' + item_word_list[1] + '</input></td>'
+      remember1_html += '<td align="center"><input type="radio" name="remember" id="item_remember0"> only ' + item_word_list[0] + ' </input></td>'
+  		remember1_html += '<td align="center"><input type="radio" name="remember" id="item_remember1"> only ' + item_word_list[1] + '</input></td>'
+      remember1_html += '<td align="center"><input type="radio" name="remember" id="item_remember2">' + item_word_list[0] + ' and ' + item_word_list[1] + '</input></td>'
       remember1_html += '</tr></table>'
       $("#remember1").html(remember1_html);
  
@@ -310,8 +310,10 @@ var experiment = { // end, next, select
 				  } else if (targ == 1) {
 					    answer = 'shared'}
 				}	
-      	}
-   
+      	} else {
+       answer = 'NA' 
+      	} 
+        
     experiment.crit = answer
    
     if (document.getElementById('item_0').checked || document.getElementById('item_1').checked || document.getElementById('item_2').checked) {    
