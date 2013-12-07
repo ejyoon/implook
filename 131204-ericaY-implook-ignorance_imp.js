@@ -1,7 +1,13 @@
 // Overview: (i) Helper (ii) Parameters (iii) Control Flow
 
-// ***WHAT'S BEEN DONE SO FAR***
-// DISPLAY: ignorance implicature for Elmo
+// ***Problems to solve***
+// 1) The error prompt when subject does not select anything does not show up
+// 2) Way to make subjects remember what was in each lunchbox
+//    a) first closed box: ask what was inside
+//    b) two boxes that close after
+// 3) condition getter
+// 4) simple ignorance condition - add HERE as a condition OR just a separate script?
+// 5) practice on submiterator (sandbox)
 
 // ---------------- HELPER ------------------
 
@@ -80,7 +86,7 @@ var experiment = { // end, next, select
   initial0:function() {
     showSlide('initial0')
     
-     // Sentential description 1 to scaffold
+     // Sentential description 0 to scaffold
       var description0_html = '<p align="center">Look at these ' + container_plural + '! I wonder what these ' + container_plural + ' have inside.</p>' 
       $("#description0").html(description0_html);
       
@@ -106,7 +112,7 @@ var experiment = { // end, next, select
      // Sentential description 1 to scaffold
       var description1_html = '<p align="center">Wow, look!</p>'
       description1_html += '<p align="center">Now, one of these ' + container_plural  + ' might close. ' 
-      description1_html += 'Let\'s see if you can remember all the things inside each ' + container_word + '! </p>'
+      description1_html += 'Let\'s see if you can remember what\'s inside each ' + container_word + '! </p>'
       $("#description1").html(description1_html);
             
       // Create the image table (tr=table row; td= table data)
@@ -154,7 +160,26 @@ var experiment = { // end, next, select
     	    }}
 			image2_html += '</tr></table>'
 			$("#image2").html(image2_html); //insert dynamically-built html code into html file; 
-    
+ 
+      // Sentential description 2 to scaffold
+      var description2_html = '<p align="center">Now, look! One of the ' + container_plural  + ' closed. </p>'
+      description2_html += '<p align="center">Hope you can remember what was in that ' + container_word + '! </p>'
+      $("#description2").html(description2_html);
+      
+      // test to see if they remember
+      var remember1_html = '<p align="center">What was in the closed ' + container_word  + '?</p>'
+      remember1_html += '<table align="center" cellspacing="40"><tr>'    
+      remember1_html += '<td align="center"><input type="radio" name="remember" id="item_0"> only ' + item_word_list[0] + ' </input></td>'
+			remember1_html += '<td align="center"><input type="radio" name="remember" id="item_1"> only ' + item_word_list[1] + '</input></td>'
+      remember1_html += '<td align="center"><input type="radio" name="remember" id="item_2">' + item_word_list[0] + item_word_list[1] + '</input></td>'
+      remember1_html += '</tr></table>'
+      $("#remember1").html(remember1_html);
+ 
+ 
+      // var for selecting what was in the lunchbox:
+      // pic of apple; pic of orange; pic of orange and apple -- set up var in parameters for shuffled pictures
+      // present table of the images and radio buttons underneath
+      // they can move on if they got the right answer but not if not
   },
       
   // INITIAL3 function
@@ -219,7 +244,7 @@ var experiment = { // end, next, select
 
   	var message_html = '<table cellspacing="2" align="center"><tr> <td id="messagesum"></td></tr></table>'
 		 $("#message").html(message_html) 
-   // *** FOR SOME REASON THE MESSAGE FUNCTION DOES NOT WORK...***
+   // *** FOR SOME REASON THE MESSAGE FUNCTION DOES NOT WORK...***  try moving this into html
    },
     
    // SELECT function
