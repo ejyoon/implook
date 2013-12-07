@@ -127,6 +127,12 @@ var experiment = { // end, next, select
     // INITIAL2 function
   initial2:function() {
     showSlide('initial2')
+    
+      // Sentential description 2 to scaffold
+      var description2_html = '<p align="center">Now, look! One of the ' + container_plural  + ' closed. </p>'
+      description2_html += '<p align="center">Hope you can remember what was in that ' + container_word + '! </p>'
+      $("#description2").html(description2_html);
+
       // Create the image table (tr=table row; td= table data)
       var image2_html = '<table align="center" cellspacing="40"><tr>'
   		image2_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td>'
@@ -154,7 +160,23 @@ var experiment = { // end, next, select
     	    }}
 			image2_html += '</tr></table>'
 			$("#image2").html(image2_html); //insert dynamically-built html code into html file; 
-    
+ 
+      // test to see if they remember
+      var remember1_html = '<p align="center">What was in the closed ' + container_word  + '?</p>'
+      remember1_html += '<table align="center" cellspacing="40"><tr>'    
+      remember1_html += '<td align="center"><input type="radio" name="remember" id="item_0"> only ' + item_word_list[0] + ' </input></td>'
+  		remember1_html += '<td align="center"><input type="radio" name="remember" id="item_1"> only ' + item_word_list[1] + '</input></td>'
+      remember1_html += '<td align="center"><input type="radio" name="remember" id="item_2">' + item_word_list[0] + ' and ' + item_word_list[1] + '</input></td>'
+      remember1_html += '</tr></table>'
+      $("#remember1").html(remember1_html);
+ 
+ 
+      // var for selecting what was in the lunchbox:
+      // pic of apple; pic of orange; pic of orange and apple -- set up var in parameters for shuffled pictures
+      // present table of the images and radio buttons underneath
+      // they can move on if they got the right answer but not if not
+
+ 
   },
       
   // INITIAL3 function
