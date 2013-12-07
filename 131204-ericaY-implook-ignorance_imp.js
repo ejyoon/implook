@@ -171,6 +171,9 @@ var experiment = { // end, next, select
       $("#remember1").html(remember1_html);
  
  
+      //message when nothing selected for memory test
+      var message_remember_html = '<table cellspacing="2" align="center"><tr> <td id="message_remember_sum"></td></tr></table>'
+  	 $("#message_remember").html(message_remember_html) 
       // var for selecting what was in the lunchbox:
       // pic of apple; pic of orange; pic of orange and apple -- set up var in parameters for shuffled pictures
       // present table of the images and radio buttons underneath
@@ -181,7 +184,52 @@ var experiment = { // end, next, select
       
   // INITIAL3 function
   initial3:function() {
-    showSlide('initial3')
+   if(document.getElementById('item_remember0').checked) {
+     if(targ == 1) {
+       if(numItem[0] == 1) {
+         showSlide("initial3")
+       } else {
+         $("#message_remember_sum").html('<font color="red">Your answer is incorrect! Try again.</font>');
+       }
+     } else if(targ == 2) {
+        if(numItem[0] == 2) {
+          showSlide("initial3")
+        } else {
+          $("#message_remember_sum").html('<font color="red">Your answer is incorrect! Try again.</font>');
+        }
+     }
+     } else if(document.getElementById('item_remember1').checked) {
+     if(targ == 1) {
+       if(numItem[1] == 1) {
+         showSlide("initial3")
+       } else {
+         $("#message_remember_sum").html('<font color="red">Your answer is incorrect! Try again.</font>');
+       }
+     } else if(targ == 2) {
+        if(numItem[1] == 2) {
+          showSlide("initial3")
+        } else {
+          $("#message_remember_sum").html('<font color="red">Your answer is incorrect! Try again.</font>');
+        }       
+     }
+   } else if(document.getElementById('item_remember2').checked) {
+     if(targ == 1) {
+       if(numItem[2] == 1) {
+         showSlide("initial3")
+       } else {
+         $("#message_remember_sum").html('<font color="red">Your answer is incorrect! Try again.</font>');
+       }
+     } else if(targ == 2) {
+        if(numItem[2] == 2) {
+          showSlide("initial3")
+        } else {
+          $("#message_remember_sum").html('<font color="red">Your answer is incorrect! Try again.</font>');
+        }       
+     }
+   } else {
+     $("#message_remember_sum").html('<font color="red">Please choose an answer!</font>');
+   }
+     
       // Create the image table (tr=table row; td= table data)
       var image3_html = '<table align="center" cellspacing="40"><tr>'
     	image3_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td>'
