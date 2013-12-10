@@ -1,4 +1,3 @@
-// Overview: (i) Helper (ii) Parameters (iii) Control Flow
 
 // ***WHAT'S BEEN DONE SO FAR***
 // DISPLAY: ignorance implicature for Elmo
@@ -81,7 +80,7 @@ var experiment = { // end, next, select
     showSlide('initial0')
     
      // Sentential description 1 to scaffold
-      var description0_html = '<p align="center">Look at my ' + container_plural + '! Let me show you what\'s inside these ' + container_plural + '...</p>' 
+      var description0_html = '<p align="center">Look at my ' + container_plural + '! Let me show you what\'s inside ...</p>' 
       $("#description0").html(description0_html);
       
       // Create the image table (tr=table row; td= table data)
@@ -104,7 +103,7 @@ var experiment = { // end, next, select
     showSlide('initial1')
     
      // Sentential description 1 to scaffold
-      var description1_html = '<p align="center">Look! I\'ve opened my ' + container_plural + ' to show you what\'s in them.</p>'
+      var description1_html = '<p align="center">Look, my ' + container_plural + ' are open, you can now see what\'s inside!</p>'
       description1_html += '<p align="center">Now, one of these ' + container_plural  + ' might close ... ' 
       description1_html += 'Let\'s see if you can remember what\'s inside each ' + container_word + '! </p>'
       $("#description1").html(description1_html);
@@ -130,7 +129,6 @@ var experiment = { // end, next, select
     
       // Sentential description 2 to scaffold
       var description2_html = '<p align="center">Now, look! One of the ' + container_plural  + ' closed. </p>'
-      description2_html += '<p align="center">Hope you can remember what was in that ' + container_word + '! </p>'
       $("#description2").html(description2_html);
 
       // Create the image table (tr=table row; td= table data)
@@ -162,7 +160,7 @@ var experiment = { // end, next, select
 			$("#image2").html(image2_html); //insert dynamically-built html code into html file; 
  
       // test to see if they remember
-      var remember1_html = '<p align="center">What was in the closed ' + container_word  + '?</p>'
+      var remember1_html = '<p align="center">Can you remember what was in the closed ' + container_word  + '?</p>'
       remember1_html += '<table align="center" cellspacing="40"><tr>'    
       remember1_html += '<td align="center"><input type="radio" name="remember" id="item_remember0"> only ' + item_word_list[0] + ' </input></td>'
   		remember1_html += '<td align="center"><input type="radio" name="remember" id="item_remember1"> only ' + item_word_list[1] + '</input></td>'
@@ -174,12 +172,6 @@ var experiment = { // end, next, select
       //message when nothing selected for memory test
       var message_remember_html = '<table cellspacing="2" align="center"><tr> <td id="message_remember_sum"></td></tr></table>'
   	 $("#message_remember").html(message_remember_html) 
-      // var for selecting what was in the lunchbox:
-      // pic of apple; pic of orange; pic of orange and apple -- set up var in parameters for shuffled pictures
-      // present table of the images and radio buttons underneath
-      // they can move on if they got the right answer but not if not
-
- 
   },
       
   // INITIAL3 function
@@ -245,7 +237,7 @@ var experiment = { // end, next, select
 
     // Show sentence
      var label_html = '<p align = "center">Elmo tells me, <b> "I like your ' + container_word + ' with ' + item_word + '."</b></p>'
-      label_html += ' <p align = "center">Which of my ' + container_plural + ' do you think Elmo likes? </p>'
+      label_html += ' <p align = "center">Which ' + container_word + ' do you think Elmo likes? </p>'
     	label_html += ' <p align = "center">Choose an object by clicking the button below it.</p>'
     	 $("#labelInst").html(label_html); //maybe here include an if function about the stage of the progression through pictures?
        
