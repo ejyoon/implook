@@ -81,7 +81,7 @@ var experiment = { // end, next, select
     showSlide('initial0')
     
      // Sentential description 1 to scaffold
-      var description0_html = '<p align="center">Look at these ' + container_plural + '! I wonder what these ' + container_plural + ' have inside.</p>' 
+      var description0_html = '<p align="center">Look at my ' + container_plural + '! Let me show you what\'s inside these ' + container_plural + '...</p>' 
       $("#description0").html(description0_html);
       
       // Create the image table (tr=table row; td= table data)
@@ -104,9 +104,9 @@ var experiment = { // end, next, select
     showSlide('initial1')
     
      // Sentential description 1 to scaffold
-      var description1_html = '<p align="center">Wow, look!</p>'
-      description1_html += '<p align="center">Now, one of these ' + container_plural  + ' might close. ' 
-      description1_html += 'Let\'s see if you can remember all the things inside each ' + container_word + '! </p>'
+      var description1_html = '<p align="center">Look! I\'ve opened my ' + container_plural + ' to show you what\'s in them.</p>'
+      description1_html += '<p align="center">Now, one of these ' + container_plural  + ' might close ... ' 
+      description1_html += 'Let\'s see if you can remember what\'s inside each ' + container_word + '! </p>'
       $("#description1").html(description1_html);
             
       // Create the image table (tr=table row; td= table data)
@@ -202,7 +202,13 @@ var experiment = { // end, next, select
       } else {
      $("#message_remember_sum").html('<font color="red">Please choose an answer!</font>');        
       }
-         
+      
+      // Sentential description 3 to scaffold
+      var description3_html = '<p align="center">Look! Here comes Elmo. </p>'
+      description3_html += '<p align="center">I wonder what he\'ll say about my ' + container_plural + '! </p>'
+      $("#description3").html(description3_html);         
+      
+      
       // Create the image table (tr=table row; td= table data)
       var image3_html = '<table align="center" cellspacing="40"><tr>'
     	image3_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td>'
@@ -238,8 +244,8 @@ var experiment = { // end, next, select
     showSlide("stage") //display slide "stage"
 
     // Show sentence
-     var label_html = '<p align = "center">Elmo says <b> "I want the ' + container_word + ' with ' + item_word + '</b>."</p>'
-      label_html += ' <p align = "center">Which ' + container_word + ' do you think Elmo wants? </p>'
+     var label_html = '<p align = "center">Elmo tells me, <b> "I like your ' + container_word + ' with ' + item_word + '."</b></p>'
+      label_html += ' <p align = "center">Which of my ' + container_plural + ' do you think Elmo likes? </p>'
     	label_html += ' <p align = "center">Choose an object by clicking the button below it.</p>'
     	 $("#labelInst").html(label_html); //maybe here include an if function about the stage of the progression through pictures?
        
