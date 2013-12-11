@@ -1,6 +1,9 @@
+// Implook ver 0
+// Overview: (i) Helper (ii) Parameters (iii) Control Flow
 
 // ***WHAT'S BEEN DONE SO FAR***
 // DISPLAY: ignorance implicature for Elmo
+
 
 // ---------------- HELPER ------------------
 
@@ -15,12 +18,28 @@ shuffle = function (o) { //v1.0
     return o;
 }
 
+// random function
+function random(a,b) {
+  if (typeof b == "undefined") {
+    a = a || 2;
+    return Math.floor(Math.random()*a);
+  } else {
+    return Math.floor(Math.random()*(b-a+1)) + a;
+  }
+}
+
 // ---------------- PARAMETERS ------------------
 // *** Maker getter function***
 // substitution for picking a random cond for now:
-var condList = [1, 2]
-var shuffled_condList = shuffle(condList)
-var cond = shuffled_condList[0]
+var filename = "EY_IL0"
+var condCounts = "1,3;2,3;" //Example: "cond1,#of ppl20;2,20;3,20" EDIT
+var xmlHttp = null;
+xmlHttp = new XMLHttpRequest(); 
+xmlHttp.open( "GET", "http://langcog.stanford.edu/cgi-bin/subject_equalizer/maker_getter.php?conds=" + condCounts + "&filename=" + filename, false );
+xmlHttp.send( null );
+//var cond = xmlHttp.responseText; // For actual experimental runs
+var cond = random(6)+1; // (1-6) For testing only (before running actual)
+
 
 // get condition values (0=simple; 1= complex)
 if (cond == 1) {
@@ -74,6 +93,9 @@ showSlide("instructions");
 // MAIN EXPERIMENT
 var experiment = { // end, next, select
     crit: [],
+    condition: cond,
+    target_item: item_word,
+    container: container_word,
     
     // INITIAL0 function
   initial0:function() {
