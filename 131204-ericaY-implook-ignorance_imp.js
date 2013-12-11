@@ -358,11 +358,25 @@ var experiment = { // end, next, select
     experiment.crit = answer
    
     if (document.getElementById('item_0').checked || document.getElementById('item_1').checked || document.getElementById('item_2').checked) {    
-    showSlide("finished");
-    var vars_html = '<p> answer =' + experiment.crit + ' </p>'
-    $("#vars").html(vars_html);
+    setTimeout(experiment.end, 500);
+
    } else {
      $("#messagesum").html('<font color="red">Please select an object!</font>');
    }
-    }
+    },
+    
+        end: function () {
+        showSlide("finished");
+        setTimeout(function () {
+
+            //Decrement  		
+            var xmlHttp = null;
+            xmlHttp = new XMLHttpRequest();
+            xmlHttp.open("GET", "http://langcog.stanford.edu/cgi-bin/subject_equalizer/decrementer.php?filename=" + filename + "&to_decrement=" + cond, false);
+            xmlHttp.send(null);
+
+            turk.submit(experiment);
+        }, 1500); //function() - anonymous function
+    },
 }
+
