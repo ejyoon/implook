@@ -68,3 +68,24 @@ com.amazonaws.mturk.service.exception.InternalServiceException: Error executing 
 	at com.amazonaws.mturk.cmd.AbstractCmd.run(AbstractCmd.java:148)
 	at com.amazonaws.mturk.cmd.GetBalance.main(GetBalance.java:28)
 [2013-12-13 16:56:43] INFO  (GetBalance.java: 51) - Your account balance: $0.00
+[2013-12-14 15:03:41] INFO  (LoadHITs.java: 193) - --[Initializing]----------
+[2013-12-14 15:03:41] INFO  (LoadHITs.java: 194) -  Input: /Users/ericang/implookGIT//eyimplook.input
+[2013-12-14 15:03:41] INFO  (LoadHITs.java: 195) -  Properties: /Users/ericang/implookGIT//eyimplook.properties
+[2013-12-14 15:03:41] INFO  (LoadHITs.java: 196) -  Question File: /Users/ericang/implookGIT//eyimplook.question
+[2013-12-14 15:03:41] INFO  (LoadHITs.java: 199) -  Limiting HITs created to: 1
+[2013-12-14 15:03:41] INFO  (LoadHITs.java: 202) -  Preview mode disabled
+[2013-12-14 15:03:43] INFO  (LoadHITs.java: 229) - --[Loading HITs]----------
+[2013-12-14 15:03:43] INFO  (LoadHITs.java: 231) -   Start time: Sat Dec 14 15:03:43 PST 2013
+[2013-12-14 15:03:43] DEBUG (WorkQueue.java: 53) - Instantiating work queue with 2 threads
+[2013-12-14 15:03:44] INFO  (RequesterService.java: 1548) - Created HIT 1: HITId=2J9CJK63ZVE9SXQP8Z1QCJL530M9YA
+[2013-12-14 15:03:44] INFO  (RequesterService.java: 1592) - 
+You may see your HIT(s) with HITTypeId '25SFYQS1CSTSZLNWR9VIF1EYDBELOZ' here: 
+[2013-12-14 15:03:44] INFO  (RequesterService.java: 1593) - 
+  https://workersandbox.mturk.com/mturk/preview?groupId=25SFYQS1CSTSZLNWR9VIF1EYDBELOZ
+
+[2013-12-14 15:03:44] INFO  (LoadHITs.java: 239) -   End time: Sat Dec 14 15:03:44 PST 2013
+[2013-12-14 15:03:44] INFO  (LoadHITs.java: 240) - --[Done Loading HITs]----------
+[2013-12-14 15:03:44] INFO  (LoadHITs.java: 241) -   Total load time: 0 seconds.
+[2013-12-14 15:03:44] INFO  (LoadHITs.java: 243) -   Successfully loaded 1 HITs.
+[2013-12-14 15:55:16] INFO  (GetBalance.java: 51) - Your account balance: $10000.00
+[2013-12-14 15:56:17] INFO  (GetBalance.java: 51) - Your account balance: $10000.00
