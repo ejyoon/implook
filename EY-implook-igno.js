@@ -3,6 +3,8 @@
 
 // ***WHAT'S BEEN DONE SO FAR***
 // DISPLAY: ignorance implicature for Elmo
+// ***INCLUDE STEPEXPERIMENT FUNCTION to only go on if it's real worker***
+// ***CHANGE MAKER GETTER - 1) with actual numbers that I want 2) only decrement for real workers***
 
 
 // ---------------- HELPER ------------------
@@ -75,7 +77,6 @@ if(targ == 0) {
   item_word = item_word_list[1]
 }
 
-// ***var answer = 'intial' (?) ***
 
 // ---------------- CONTROL FLOW ------------------
 //PRE-LOAD IMAGES
