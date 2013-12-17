@@ -36,7 +36,7 @@ secret_key=iwHi6u5xxGIKvbosSVgvNonCs5IHUAO/LNleHMfJ
 
 # use the service_url defined below:
 
-#service_url=https://mechanicalturk.sandbox.amazonaws.com/?Service=AWSMechanicalTurkRequester
+service_url=https://mechanicalturk.sandbox.amazonaws.com/?Service=AWSMechanicalTurkRequester
 
 
 
@@ -44,7 +44,7 @@ secret_key=iwHi6u5xxGIKvbosSVgvNonCs5IHUAO/LNleHMfJ
 
 # use the service_url defined below:
 
-service_url=https://mechanicalturk.amazonaws.com/?Service=AWSMechanicalTurkRequester
+# service_url=https://mechanicalturk.amazonaws.com/?Service=AWSMechanicalTurkRequester
 
 
 
