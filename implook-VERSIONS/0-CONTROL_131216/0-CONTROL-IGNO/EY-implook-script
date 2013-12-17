@@ -1,0 +1,26 @@
+Goals:
+
+1) set up the story so that it's obvious one lunchbox is outside of the speaker's knowledge
+2) set up the story so that there are no memory constraints involved
+3) set up the story so that the speaker expresses his preference(s)
+
+
+Elmo and his friends get different lunch every day. They don't know what their lunch is before their moms pack it.
+Elmo and his friends all have brothers and sisters, but they have different colored lunchboxes! Your role is to find Elmo and his friend the right lunchboxes based on what they say.
+
+
+
+
+Day 1: (all shown) orange, apple, grape
+Grober: Oo yum! My lunch has a grape.
+(If they pick graph lunch) Right!
+
+Day 2: orange (hidden from elmo), apple, orange
+("Dora's mom placed one lunchbox in a special place where no one can see it.") <- set a column/row or something to show it's under a table/in closet?
+Dora: Awesome! My lunch has an orange!
+(if they pick lunch with orange that's seen) right!
+(if they pick lunch with orange that's unseen) Try again, remember they can't see the special lunchbox!
+
+Day 3: orange (hidden from elmo), apple, orange & apple    (igno)   OR        orange (seen), apple, orange & apple    (simple)
+"Yay, I'm excited! My lunch has an orange!"
+(no feedback)
