@@ -5,6 +5,7 @@
 // DISPLAY: ignorance implicature for Elmo
 // ***INCLUDE STEPEXPERIMENT FUNCTION to only go on if it's real worker***
 // ***CHANGE MAKER GETTER - 1) with actual numbers that I want 2) only decrement for real workers***
+// check whether submiterator works if the webpage is empty? (i.e., is the html and js from the directory on my computer or from webpage? if the latter, what's the offline directory specified in the submiterator for?)
 
 
 // ---------------- HELPER ------------------
