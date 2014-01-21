@@ -35,7 +35,7 @@ function random(a,b) {
 // *** Maker getter function***
 // substitution for picking a random cond for now:
 var filename = "EY_IL0"
-var condCounts = "1,20;2,20;3,20;4,20" //Example: "cond1,#of ppl20;2,20;3,20" EDIT
+var condCounts = "1,20;2,20;" //Example: "cond1,#of ppl20;2,20;3,20" EDIT
 var xmlHttp = null;
 xmlHttp = new XMLHttpRequest(); 
 xmlHttp.open( "GET", "http://langcog.stanford.edu/cgi-bin/subject_equalizer/maker_getter.php?conds=" + condCounts + "&filename=" + filename, false );
@@ -44,23 +44,13 @@ xmlHttp.send( null );
 var cond = random(2)+1; // (1-6) For testing only (before running actual)
 
 
-// get condition values (1=igno-item1; 2= igno-item2; 3=simple-item1; 4=simple-item2)
+// get condition values (0=simple; 1= complex)
 if (cond == 1) {
-    experiment = "ignorance"
     targ = 0;
     condName = 'item = 1'
 } else if (cond == 2) {
-    experiment = "ignorance"
     targ = 1;
    	condName = 'item = 2'
-} else if (cond == 3) {
-    experiment = "simple"
-    targ = 0;
-    condName = 'item = 1'  
-} else if (cond == 4) {
-    experiment = "simple"
-    targ = 1;
-    condName = 'item = 2'
 }
 
 // --IMAGES--
@@ -111,12 +101,11 @@ var experiment = { // end, next, select
     container: container_word,
     
     // INITIAL0 function
-  initial01:function() {
-    showSlide('initial01')
+  initial0:function() {
+    showSlide('initial0')
     
      // Sentential description 1 to scaffold
-      var description0_html = '<p align="center">Grober\'s mom packed lunch for Grober and his brother and sister today!</p>'
-      description0_html += '<p align="center">Which do you think is Grober\'s lunch? Select the lunchbox that you think belongs to Grober and click \'Next\'.</p>'
+      var description0_html = '<p align="center">Look at my ' + container_plural + '! Let me show you what\'s inside ...</p>' 
       $("#description0").html(description0_html);
       
       // Create the image table (tr=table row; td= table data)
@@ -124,15 +113,11 @@ var experiment = { // end, next, select
   		image0_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td>'
     	image0_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td>'
       image0_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td></tr>'
-      for (i=1;i<4;i++){ //***TRY TO RANDOMIZE THESE TRAINING ITEM ORDER?***
-			  name = "objects/cont0" + i + ".png"
+      for (i=0;i<3;i++){
+			  name = "objects/" + container[i] + numItem[i] + "_closed.png"
 			  image0_html += '<td align="center"><img  src="' + name +  '"alt="' + name +
 				'" id="objImage" height=2% /></td>'
 			}
-			image0_html += '</tr><tr>'
-  		image0_html += '<td align="center"><input type="radio" name="thing" id="item_00"></input></td>'
-			image0_html += '<td align="center"><input type="radio" name="thing" id="item_01"></input></td>'
-      image0_html += '<td align="center"><input type="radio" name="thing" id="item_02"></input></td>'
 			image0_html += '</tr></table>'
 			$("#image0").html(image0_html); //insert dynamically-built html code into html file; 
 
@@ -282,7 +267,6 @@ var experiment = { // end, next, select
     	 $("#labelInst").html(label_html); //maybe here include an if function about the stage of the progression through pictures?
        
       // Create the image table (tr=table row; td= table data)
-      // *** DIFF BETWEEN IGNO AND SIMPLE HERE ****
   		var image_html = '<table align="center" cellspacing="40"><tr>'
   		image_html += '<td align = "center"><img src="objects/no_elmo.png" id="no_elmo" height=35% /></td>'
     	image_html += '<td align = "center"><img src="objects/elmo.png" id="elmo" height=35% /></td>'
@@ -301,10 +285,12 @@ var experiment = { // end, next, select
 
   	var message_html = '<table cellspacing="2" align="center"><tr> <td id="messagesum"></td></tr></table>'
 		 $("#message").html(message_html) 
+   // *** FOR SOME REASON THE MESSAGE FUNCTION DOES NOT WORK...***
    },
     
    // SELECT function
    select: function() {
+// *** Add function getting whether the answers are privileged, shared, or incorrect ***
       var left
       var center
       var right
